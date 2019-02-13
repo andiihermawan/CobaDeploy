@@ -1,0 +1,33 @@
+{% extends 'Home/template.html' %}
+{% load static %}
+
+{% block head %}
+<title>
+    Mentor
+</title>
+{% endblock %}
+
+{% block section %}
+{%for isi in mentor%}
+<div class="row" id="atas">
+    <div class="col-md-5 lg-5" class ="mentee_margin">
+        <img class="mentee_foto"  src="{{ isi.image.url}}" /><br>
+
+    <div id="kata" class="col-md-7 lg-7">
+        <span class="judul">
+            Our Mentor
+        </span>
+        <h5>
+            {{isi.nama}}
+        </h5>
+        <span>
+            {{ isi.specialis}}
+        </span>
+        <p>
+            "{{ isi.quote }}"
+        </p><br><br><br><br><br>
+    </div>
+    </div>
+</div>
+{%endfor%}
+{% endblock %}

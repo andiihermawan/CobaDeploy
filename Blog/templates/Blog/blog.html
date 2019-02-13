@@ -1,0 +1,26 @@
+{% extends 'Home/template.html' %}
+{% load static %}
+
+{% block head %}
+<title>
+    Blog
+</title>
+{% endblock %}
+
+{% block section %}
+{% for isi in blog %}
+<div>
+    <img class="foto_blog" src="{{ isi.image.url}}" />
+</div>
+<span class="span_blog_kiri">{{ isi.created_at }}</span><span class="span_blog_kanan">0 Comment</span>
+<div>
+    <h2 class="h2_blog">
+        {{ isi.judul }}
+    </h2>
+    <p class="p_blog">
+        {{ isi.content}}
+    </p>
+    <a class="a_blog" href="">Baca Selengkapnya</a><br><br><br>
+</div>
+{% endfor %}
+{% endblock %}

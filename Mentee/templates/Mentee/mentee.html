@@ -1,0 +1,29 @@
+{% extends 'Home/template.html' %}
+{% load static %}
+
+{% block head %}
+<title>
+    Mentee
+</title>
+{% endblock %}
+
+{% block section %}
+{%for isi in mentee%}
+    <div class="row" id="atas">
+        <div class="col-md-5 lg-5" class ="mentee_margin">
+            <img class="mentee_foto"  src="{{ isi.image }}" /><br>
+        </div><br>
+        <div id="kata" class="col-md-7 lg-7">
+            <span class="judul">
+                Our Mentee
+            </span>
+            <h5>
+                {{ isi.nama}}
+            </h5>
+            <span>
+                "{{ isi.opinion}}"
+            </span>
+        </div>
+    </div>
+{%endfor%}
+{% endblock %}
